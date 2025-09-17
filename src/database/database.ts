@@ -5,10 +5,10 @@ import mysql2, { ConnectionOptions, ResultSetHeader, RowDataPacket } from "mysql
 // Configuracion:
 
 const config: ConnectionOptions = {
-    host: '',
+    host: 'localhost',
     user: 'root',
     password: '',
-    database: '',
+    database: 'hpshop',
     connectionLimit: 10,
     waitForConnections: true,
     queueLimit: 0

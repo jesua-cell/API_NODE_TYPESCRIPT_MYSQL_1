@@ -1,3 +1,4 @@
+import db from "./database/database";
 // Dedfinir la app
 import express, { Request, Response } from "express";
 
@@ -8,8 +9,11 @@ const PORT = process.env.PORT || 3000;
 // Middelware
 app.use(express.json());
 
-app.get("/", (req: Request, res: Response) => {
-    res.send("Mondongo");
+app.get("/", async (req: Request, res: Response) => {
+    // res.send("Mondongo");
+    const results = await db.query('SELECT * FROM products');
+    res.json(results);
+
 });
 
 app.listen(PORT, () => {
