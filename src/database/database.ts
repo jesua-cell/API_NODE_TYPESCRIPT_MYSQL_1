@@ -18,7 +18,7 @@ const config: ConnectionOptions = {
 
 const pool = mysql2.createPool(config);
 
-// Ejecutas la consultas de la BD:
+// Ejecutar la consultas de la BD:
 
 class DataBase {
     async query<T extends RowDataPacket[] | ResultSetHeader>(sql: string, values: any = null) {

@@ -12,7 +12,7 @@ export function sendSucces(res: Response, data: any) {
 };
 
 // Funcion cuando la peticion no se pudo: resive el objeto Response; un mensajed; el estado; y la data(vacia)
-export function sendError(res: Response, message: "Error interno en el Servidor", statusCode: number = 500) {
+export function sendError(res: Response, message: string = "Error interno en el Servidor", statusCode: number = 500) {
     res.status(statusCode).json({
         success: false,
         data: null,
