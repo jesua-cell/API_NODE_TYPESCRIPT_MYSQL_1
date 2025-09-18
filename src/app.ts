@@ -1,6 +1,8 @@
 import db from "./database/database";
 // Dedfinir la app
 import express, { Request, Response } from "express";
+// Exportar las rutas y definirlas:
+import routes from "./routes/routes";
 
 const app = express();
 
@@ -15,6 +17,9 @@ app.get("/", async (req: Request, res: Response) => {
     res.json(results);
 
 });
+
+// Rutas Definidas
+app.use('/', routes);
 
 app.listen(PORT, () => {
     console.log(`Servivor corriendo en el puerto: ${PORT}`);
